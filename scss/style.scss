@@ -1,0 +1,141 @@
+@use "sass:math";
+
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+
+body {
+  color: #1a1818;
+  font-family: "Lobster";
+}
+
+[class*="__container"] {
+  max-width: #{$containerWidth}px;
+  margin: 0 auto;
+  padding-left: toRem(15);
+  padding-right: toRem(15);
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.page {
+  flex-grow: 1;
+  background: url("../img/bg.jpg") repeat center / toRem(400);
+  display: flex;
+}
+
+.page {
+  &__game {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+.game {
+  &__container {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__body {
+    padding: toRem(50) toRem(40);
+    background-color: #ffffff;
+    border-radius: toRem(12);
+  }
+  &__title {
+    @include adaptiveValue("font-size", 70, 30);
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+    text-align: center;
+  }
+
+  &__form {
+  }
+
+  &__field {
+    display: grid;
+    display: none;
+    gap: toRem(30);
+  }
+
+  &__task {
+    @include adaptiveValue("font-size", 150, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: toRem(20);
+  }
+
+  &__timer {
+    @include adaptiveValue("font-size", 150, 50);
+    text-align: center;
+  }
+}
+.form-game {
+  display: grid;
+  gap: toRem(30);
+  &__prop {
+    font-size: toRem(30);
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(20);
+    justify-items: center;
+  }
+
+  &__submit {
+    padding: toRem(12) toRem(30);
+    background-color: #ff8ee5;
+    font-size: 30px;
+    transition: background-color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #df52be;
+      }
+    }
+    border-radius: toRem(8);
+  }
+}
+.inputs {
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+  }
+
+  &__input {
+    @include adaptiveValue("width", 80, 40);
+    aspect-ratio: 1/1;
+    color: #1a1818;
+    @include adaptiveValue("font-size", 50, 16);
+    padding: 0 toRem(10);
+    border-radius: toRem(8);
+    border: toRem(2) #ff8ee5 solid;
+    transition: border-color 0.3s;
+    &:focus-visible {
+      outline: none;
+      border-color: #df52be;
+    }
+    text-align: center;
+  }
+
+  &__label {
+    @include adaptiveValue("font-size", 40, 20);
+  }
+}

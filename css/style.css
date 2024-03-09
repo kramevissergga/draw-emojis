@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster:regular&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+  color: #1a1818;
+  font-family: "Lobster";
+}
+
+[class*=__container] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex-grow: 1;
+  background: url("../img/bg.jpg") repeat center/25rem;
+  display: flex;
+}
+
+.page__game {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.game__container {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game__body {
+  padding: 3.125rem 2.5rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+}
+.game__title {
+  text-align: center;
+}
+@media (min-width: 75em) {
+  .game__title {
+    font-size: 4.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.875rem , 0.9659090909rem  +  4.5454545455vw , 4.375rem )) {
+    .game__title {
+      font-size: clamp( 1.875rem , 0.9659090909rem  +  4.5454545455vw , 4.375rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.875rem , 0.9659090909rem  +  4.5454545455vw , 4.375rem )) {
+    .game__title {
+      font-size: calc(1.875rem + 2.5 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .game__title {
+    font-size: 1.875rem;
+  }
+}
+.game__title:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.game__field {
+  display: grid;
+  display: none;
+  gap: 1.875rem;
+}
+.game__task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+@media (min-width: 75em) {
+  .game__task {
+    font-size: 9.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem )) {
+    .game__task {
+      font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem );
+    }
+  }
+  @supports not (font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem )) {
+    .game__task {
+      font-size: calc(3.125rem + 6.25 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .game__task {
+    font-size: 3.125rem;
+  }
+}
+.game__timer {
+  text-align: center;
+}
+@media (min-width: 75em) {
+  .game__timer {
+    font-size: 9.375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem )) {
+    .game__timer {
+      font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem );
+    }
+  }
+  @supports not (font-size: clamp( 3.125rem , 0.8522727273rem  +  11.3636363636vw , 9.375rem )) {
+    .game__timer {
+      font-size: calc(3.125rem + 6.25 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .game__timer {
+    font-size: 3.125rem;
+  }
+}
+
+.form-game {
+  display: grid;
+  gap: 1.875rem;
+}
+.form-game__prop {
+  font-size: 1.875rem;
+}
+.form-game__inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  justify-items: center;
+}
+.form-game__submit {
+  padding: 0.75rem 1.875rem;
+  background-color: #ff8ee5;
+  font-size: 30px;
+  transition: background-color 0.3s;
+  border-radius: 0.5rem;
+}
+@media (any-hover: hover) {
+  .form-game__submit:hover {
+    background-color: #df52be;
+  }
+}
+
+.inputs__item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.inputs__input {
+  aspect-ratio: 1/1;
+  color: #1a1818;
+  padding: 0 0.625rem;
+  border-radius: 0.5rem;
+  border: 0.125rem #ff8ee5 solid;
+  transition: border-color 0.3s;
+  text-align: center;
+}
+@media (min-width: 75em) {
+  .inputs__input {
+    width: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (width: clamp( 2.5rem , 1.5909090909rem  +  4.5454545455vw , 5rem )) {
+    .inputs__input {
+      width: clamp( 2.5rem , 1.5909090909rem  +  4.5454545455vw , 5rem );
+    }
+  }
+  @supports not (width: clamp( 2.5rem , 1.5909090909rem  +  4.5454545455vw , 5rem )) {
+    .inputs__input {
+      width: calc(2.5rem + 2.5 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .inputs__input {
+    width: 2.5rem;
+  }
+}
+@media (min-width: 75em) {
+  .inputs__input {
+    font-size: 3.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1rem , 0.2272727273rem  +  3.8636363636vw , 3.125rem )) {
+    .inputs__input {
+      font-size: clamp( 1rem , 0.2272727273rem  +  3.8636363636vw , 3.125rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.2272727273rem  +  3.8636363636vw , 3.125rem )) {
+    .inputs__input {
+      font-size: calc(1rem + 2.125 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .inputs__input {
+    font-size: 1rem;
+  }
+}
+.inputs__input:focus-visible {
+  outline: none;
+  border-color: #df52be;
+}
+@media (min-width: 75em) {
+  .inputs__label {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.25rem , 0.7954545455rem  +  2.2727272727vw , 2.5rem )) {
+    .inputs__label {
+      font-size: clamp( 1.25rem , 0.7954545455rem  +  2.2727272727vw , 2.5rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.25rem , 0.7954545455rem  +  2.2727272727vw , 2.5rem )) {
+    .inputs__label {
+      font-size: calc(1.25rem + 1.25 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .inputs__label {
+    font-size: 1.25rem;
+  }
+}

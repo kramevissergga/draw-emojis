@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Намалюй emoji</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__content"></div>
+    </header>
+    <main class="page">
+      <section class="page__game game">
+        <div class="game__container">
+          <div class="game__body">
+            <h1 class="game__title">Намалюй emoji 🐼</h1>
+            <form class="game__form form-game" action="#" method="GET">
+              <div class="form-game__prop">Час:</div>
+              <div class="form-game__inputs inputs">
+                <div class="inputs__item">
+                  <input type="number" max="59" value="10" required id="min" name="min" class="inputs__input">
+                  <label class="inputs__label" for="minutes">ХВ</label>
+                </div>
+                <div class="inputs__item">
+                  <input type="number" max="59" value="0" required id="sec" name="sec" class="inputs__input">
+                  <label class="inputs__label" for="sec">С</label>
+                </div>
+              </div>
+              <button class="form-game__submit">ОК</button>
+            </form>
+            <div class="game__field">
+              <div class="game__task">
+              </div>
+              <div class="game__timer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__content"></div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
